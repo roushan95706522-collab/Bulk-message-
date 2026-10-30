@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulk WhatsApp Sender</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; padding: 50px; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); max-width: 500px; margin: auto; }
+        h2 { color: #25D366; text-align: center; }
+        label { font-weight: bold; display: block; margin-top: 15px; }
+        input, textarea, button { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { background-color: #25D366; color: white; font-size: 16px; border: none; cursor: pointer; margin-top: 20px; }
+        button:hover { background-color: #128C7E; }
+        .hint { font-size: 12px; color: #666; margin-top: 3px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🚀 Flask WhatsApp Sender</h2>
+        <form action="/send" method="POST" enctype="multipart/form-data">
+            <label>Excel (.xlsx) File Upload Karein:</label>
+            <input type="file" name="file" accept=".xlsx" required>
+
+            <label>Phone Number Column ka Naam:</label>
+            <input type="text" name="phone_col" placeholder="Phone" value="Phone" required>
+
+            <label>Name Column ka Naam:</label>
+            <input type="text" name="name_col" placeholder="Name" value="Name" required>
+
+            <label>Date Column ka Naam:</label>
+            <input type="text" name="date_col" placeholder="Date" value="Date" required>
+
+            <label>Message:</label>
+            <textarea name="message" rows="4" placeholder="Hello {name}, aapka interview ya appointment {date} ko hai..." required></textarea>
+            <div class="hint">Tip: Message mein <b>{name}</b> aur <b>{date}</b> ka hi use karein.</div>
+
+            <button type="submit">🚀 Send WhatsApp Messages</button>
+        </form>
+    </div>
+</body>
+</html>
